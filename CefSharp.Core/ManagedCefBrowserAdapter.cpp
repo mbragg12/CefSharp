@@ -25,8 +25,7 @@ void ManagedCefBrowserAdapter::CreateOffscreenBrowser(IntPtr windowHandle, Brows
     auto hwnd = static_cast<HWND>(windowHandle.ToPointer());
 
     CefWindowInfo window;
-    auto transparent = browserSettings->OffScreenTransparentBackground.GetValueOrDefault(true);
-    window.SetAsWindowless(hwnd, transparent);
+    window.SetAsWindowless(hwnd);
     CefString addressNative = StringUtils::ToNative(address);
 
     if (!CefBrowserHost::CreateBrowser(window, _clientAdapter.get(), addressNative,

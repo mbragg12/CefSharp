@@ -14,8 +14,7 @@ namespace CefSharp
         int Height { get; set; }
         uint Style { get; set; }
         uint ExStyle { get; set; }
-        IntPtr ParentWindowHandle { get; set; }
-        bool TransparentPaintingEnabled { get; set; }
+        IntPtr ParentWindowHandle { get; set; }        
         bool WindowlessRenderingEnabled { get; set; }
         IntPtr WindowHandle { get; set; }
 
@@ -31,6 +30,6 @@ namespace CefSharp
         /// <param name="transparent">If is true a transparent background color will be used (RGBA=0x00000000). 
         /// If is false the background will be white and opaque. 
         /// In order to create windowless browsers the CefSettings.windowless_rendering_enabled value must be set to true.</param>
-        void SetAsWindowless(IntPtr parentHandle, bool transparent);
+        void SetAsWindowless(IntPtr parentHandle);
     }
 }
